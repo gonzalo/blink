@@ -42,9 +42,9 @@ These instructions assume you are in a shell prompt on CHIP.
 
 1. Get the shell script file onto CHIP:
 
-        sudo wget -O /usr/local/bin/blink.sh http://gonzalo.github.io/blink/blink.sh
+        sudo wget -O /usr/local/bin/blink.sh https://raw.githubusercontent.com/gonzalo/blink/master/blink.sh
         sudo chmod +x /usr/local/bin/blink.sh
-        sudo wget -O /etc/systemd/system/blink.service http://gonzalo.github.io/blink/blink.service
+        sudo wget -O /etc/systemd/system/blink.service https://raw.githubusercontent.com/gonzalo/blink/master/blink.service
         sudo systemctl enable /etc/systemd/system/blink.service
         sudo service blink start
 
