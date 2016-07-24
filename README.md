@@ -5,10 +5,13 @@ CHIP program to blink status LED and shut down when reset if briefly pressed.
 
 I want there to be NO barriers to using this code, so I am releasing it to the public domain.  But "public domain" does not have an internationally agreed upon definition, so I use CC0:
 
-Copyright 2016 Steven Ford http://geeky-boy.com and licensed
+Original Copyright 2016 Steven Ford http://geeky-boy.com and licensed
 "public domain" style under
 [CC0](http://creativecommons.org/publicdomain/zero/1.0/): 
 ![CC0](https://licensebuttons.net/p/zero/1.0/88x31.png "CC0")
+
+(This version has been modified by Gonzalo Cao and released under same license)
+
 
 To the extent possible under law, the contributors to this project have
 waived all copyright and related or neighboring rights to this work.
@@ -29,7 +32,7 @@ The [CHIP](http://getchip.com/) single-board computer runs Linux.  As a result, 
 
 You can find blink on github.  See:
 
-* User documentation (this README): https://github.com/fordsfords/blink/tree/gh-pages
+* User documentation (this README): https://github.com/gonzalo/blink/tree/gh-pages
 
 Note: the "gh-pages" branch is considered to be the current stable release.  The "master" branch is the development cutting edge.
 
@@ -39,9 +42,9 @@ These instructions assume you are in a shell prompt on CHIP.
 
 1. Get the shell script file onto CHIP:
 
-        sudo wget -O /usr/local/bin/blink.sh http://fordsfords.github.io/blink/blink.sh
+        sudo wget -O /usr/local/bin/blink.sh http://gonzalo.github.io/blink/blink.sh
         sudo chmod +x /usr/local/bin/blink.sh
-        sudo wget -O /etc/systemd/system/blink.service http://fordsfords.github.io/blink/blink.service
+        sudo wget -O /etc/systemd/system/blink.service http://gonzalo.github.io/blink/blink.service
         sudo systemctl enable /etc/systemd/system/blink.service
         sudo service blink start
 
@@ -64,6 +67,9 @@ Since blink is a service, you can manually stop it with:
 3. There are often ways of automatically monitoring the health of applications.  At a crude level, you can periodically run the "ps" command and at least make sure the process itself is still running.  Even better would be to be able to "poke" the application in some way to produce an expected result (like maybe sending it a signal and writing the application to write a message to a log file).  You could build this capability into blink, and if it detects a failure, change the blink rate of the LED (like to 3 pulses per second).  This still won't tell you *what* is wrong, but at least it narrows things down a bit.
 
 ## Release Notes
+* 24-Jul-2016
+
+    Changed blinking times (longer on, shorter off)
 
 * 27-Jun-2016
 
