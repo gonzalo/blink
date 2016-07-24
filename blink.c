@@ -50,8 +50,8 @@ int main ( int argc, char *argv[] )
     ton = strtol(argv[1], NULL, 10);
     toff = strtol(argv[2], NULL, 10);
   } else {
-    ton = 1000000; /* 1 million microseconds - 1 second of sleep */
-    toff = ton;
+    ton = 5000000; /* 5 million microseconds - 0,2 second of sleep */
+    toff = 200000;
   }
 
   /* Enable and configure XIO-P7 as input. */
